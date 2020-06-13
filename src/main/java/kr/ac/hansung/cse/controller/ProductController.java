@@ -56,7 +56,7 @@ public class ProductController {
 
 	// Retrieve/Get(GET) Get details of products with id
 	@GetMapping("/products/{id}")
-	public ResponseEntity<Product> getProductById(@PathVariable("id") long id) {
+	public ResponseEntity<Product> getProductById(@PathVariable("id") int id) {
 		Optional<Product> productData = repository.findById(id);
 
 		if (productData.isPresent()) {
@@ -67,7 +67,7 @@ public class ProductController {
 	}
 
 	// Fetch all products of a category
-	@GetMapping(value = "products/category/{category}")
+	@GetMapping(value = "/products/category/{category}")
 	public ResponseEntity<List<Product>> fingByCategory(@PathVariable String category) {
 		try {
 			List<Product> products = repository.findByCategory(category);
@@ -83,7 +83,7 @@ public class ProductController {
 
 	// Update(PUT) : modify values of product with id=N
 	@PutMapping("/products/{id}")
-	public ResponseEntity<Product> updateProduct(@PathVariable("id") long id, @RequestBody Product product) {
+	public ResponseEntity<Product> updateProduct(@PathVariable("id") int id, @RequestBody Product product) {
 		Optional<Product> productData = repository.findById(id);
 
 		if (productData.isPresent()) {
@@ -102,7 +102,7 @@ public class ProductController {
 
 	// Delete(DELETE): delete product with id=N
 	@DeleteMapping("/products/{id}")
-	public ResponseEntity<HttpStatus> deleteProduct(@PathVariable("id") long id) {
+	public ResponseEntity<HttpStatus> deleteProduct(@PathVariable("id") int id) {
 		try {
 			repository.deleteById(id);
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);

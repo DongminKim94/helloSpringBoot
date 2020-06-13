@@ -16,7 +16,7 @@ import lombok.ToString;
 
 @Entity
 //문제에 명시된 클래스 이름과 테이블 이름이 동일하지 않기 때문에 @Table 어노테이션을 사용하여 해당 테이블과 매핑시켜 주어야 한다. 
-@Table(name="productTable")
+@Table(name="producttable")
 @Getter
 @Setter
 @ToString
@@ -45,7 +45,7 @@ public class Product implements Serializable {
 	@Column(name="manufacturer")
 	private String manufacturer;
 	
-	@Column(name="unitInStock")
+	@Column(name="unit_in_stock")
 	private int unitInStock;
 	
 	@Column(name="description")
