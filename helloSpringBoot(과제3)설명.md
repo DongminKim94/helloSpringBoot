@@ -1,6 +1,6 @@
 1. 데이터베이스 스키마 및 테이블 생성(테이블은 어플리케이션 실행 후 데이터베이스에 자동 생성됨)
 
-![image-20200613201645810](C:\Users\dongmin\eclipse-workspace\helloSpringBoot\img\image-20200613201645810.png)
+![image-20200613201645810](.\img\image-20200613201645810.png)
 
 
 
