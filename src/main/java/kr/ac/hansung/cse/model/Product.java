@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,6 +15,8 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
+//문제에 명시된 클래스 이름과 테이블 이름이 동일하지 않기 때문에 @Table 어노테이션을 사용하여 해당 테이블과 매핑시켜 주어야 한다. 
+@Table(name="productTable")
 @Getter
 @Setter
 @ToString
@@ -47,4 +50,14 @@ public class Product implements Serializable {
 	
 	@Column(name="description")
 	private String description;
+	
+	public Product(String name, String category, int price, String manufacturer, int unitInStock, String description) {
+		this.name=name;
+		this.category=category;
+		this.price=price;
+		this.manufacturer=manufacturer;
+		this.unitInStock=unitInStock;
+		this.description=description;
+		
+	}
 }
